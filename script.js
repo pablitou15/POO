@@ -13,9 +13,9 @@ let bool = true;
 let array = ["perro",20, "Gato", 50];
 let objeto = {
     Edad:20, 
-    Nombre: "Dany",
-    Telefono: "8116851",
-    Direccion: "El Rosal 2158"
+    Nombre: "Mario",
+    Telefono: "908767",
+    Direccion: "los mereyes 2098"
 };
 let indefinida;
 let nula = null;
