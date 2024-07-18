@@ -1,57 +1,60 @@
-let cards = [], sum = 0, message = "", isAlive = false, hasBlackjack = false, count = 0;
 
-const cardElement = document.getElementById('card-element'),
-      sumElement = document.getElementById('sum-element'),
-      newCardButton = document.getElementById('card-btn'),
-      msgElement = document.getElementById('message-element'),
-      countElement = document.getElementById('count-element'),
-      cardInput = document.getElementById('card-input');
+    let cartas = [], suma = 0, mensaje = "", estaVivo = false, tieneBlackjack = false, conteo = 0;
 
-const getCardValue = card => {
-    if (['J', 'Q', 'K'].includes(card)) return 10;
-    if (card === 'A') return 11;
-    return parseInt(card);
-}
+    // Función para obtener un elemento del DOM por su ID
+    const el = id => document.getElementById(id);
 
-const countCard = card => {
-    if (['2', '3', '4', '5', '6'].includes(card)) count += 1;
-    else if (['10', 'J', 'Q', 'K', 'A'].includes(card)) count -= 1;
-}
+    //  almacenar elementos del DOM
+    const elementoCartas = el('elemento-cartas');
+    const elementoSuma = el('elemento-suma');
+    const botonNuevaCarta = el('boton-carta');
+    const elementoMensaje = el('elemento-mensaje');
+    const elementoConteo = el('elemento-conteo');
+    const entradaCarta = el('entrada-carta');
 
-const startGame = () => {
-    isAlive = true;
-    cards = [];
-    sum = 0;
-    count = 0;
-    cardElement.textContent = "Cartas: ";
-    sumElement.textContent = "Suma: ";
-    countElement.textContent = "Conteo: ";
-    message = "Ingresa una carta para comenzar.";
-    msgElement.textContent = message;
-}
+    //   el valor de una carta
+    const obtenerValorCarta = carta => ['J', 'Q', 'K'].includes(carta) ? 10 : carta === 'A' ? 11 : parseInt(carta);
 
-const renderGame = () => {
-    cardElement.textContent = `Cartas: ${cards.join(" ")}`;
-    sumElement.textContent = `Suma: ${sum}`;
-    countElement.textContent = `Conteo: ${count} ${count > 0 ? "Bet" : "sostener"}`;
-    if (sum < 21) message = "¿Quieres sacar una nueva carta?";
-    else if (sum === 21) message = "¡Ganaste!", hasBlackjack = true;
-    else message = "¡Estás fuera del juego!", isAlive = false;
-    msgElement.textContent = message;
-}
+    //  el valor de una carta
+    const contarCarta = carta => conteo += ['2', '3', '4', '5', '6'].includes(carta) ? 1 : ['10', 'J', 'Q', 'K', 'A'].includes(carta) ? -1 : 0;
 
-newCardButton.addEventListener("click", () => {
-    if (isAlive && !hasBlackjack) {
-        let newCard = cardInput.value.toUpperCase();
-        if (['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'].includes(newCard)) {
-            cards.push(newCard);
-            sum += getCardValue(newCard);
-            countCard(newCard);
-            renderGame();
-            cardInput.value = "";
-        } else {
-            msgElement.textContent = "Carta inválida, por favor ingresa una carta válida.";
+    //  comenzar el juego
+    const empezarJuego = () => {
+        estaVivo = true;
+        cartas = [];
+        suma = conteo = 0;
+        elementoCartas.textContent = "Cartas: ";
+        elementoSuma.textContent = "Suma: ";
+        elementoConteo.textContent = "Conteo: ";
+        elementoMensaje.textContent = mensaje = "Ingresa una carta para comenzar.";
+    };
+
+    // Función para renderizar el juego
+    const renderizarJuego = () => {
+        elementoCartas.textContent = `Cartas: ${cartas.join(" ")}`;
+        elementoSuma.textContent = `Suma: ${suma}`;
+        elementoConteo.textContent = `Conteo: ${conteo} ${conteo > 0 ? "Apostar" : "Sostener"}`;
+        elementoMensaje.textContent = suma < 21 ? "¿Quieres sacar una nueva carta?" :
+                                    suma === 21 ? "¡Ganaste!" : "¡Estás fuera del juego!";
+        tieneBlackjack = suma === 21;
+        estaVivo = suma < 21;
+    };
+
+    // Evento click para el botón de nueva carta
+    botonNuevaCarta.addEventListener("click", () => {
+        if (estaVivo && !tieneBlackjack) {
+            let nuevaCarta = entradaCarta.value.toUpperCase();
+            if (['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'].includes(nuevaCarta)) {
+                cartas.push(nuevaCarta);
+                suma += obtenerValorCarta(nuevaCarta);
+                contarCarta(nuevaCarta);
+                renderizarJuego();
+                entradaCarta.value = "";
+            } else {
+                elementoMensaje.textContent = "Carta inválida, por favor ingresa una carta válida.";
+            }
         }
-    }
-});
+    });
+
+
 
