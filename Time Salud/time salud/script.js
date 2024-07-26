@@ -5,3 +5,4 @@ menubar.onclick = () =>{
     menubar.classList.toggle('fa-times');
     navbar.classList.toggle('active')
 }
+
