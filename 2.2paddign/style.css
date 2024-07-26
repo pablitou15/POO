@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.margin {
+    background-color: #C75022;
+    padding: 50px; 
+}
+
+.border {
+    background-color: #F1AA83;
+    padding: 40px; 
+}
+
+.padding {
+    background-color: #4B8CBB;
+    padding: 30px; 
+}
+
+.content {
+    background-color: #8BC6E8;
+    padding: 20px; 
+}
