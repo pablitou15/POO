@@ -83,7 +83,9 @@ function sumarN(numero){
 
 }
 console.log(`la suma es: ${sumarN(n)}`);
+
 */
+
 
 //EJERCICIO 6
 
@@ -391,6 +393,10 @@ contarCaracteres();
 
 */
 
+//EJERCICIO 21
+
+/*
+
 let N = parseInt(prompt("Ingrese la cantidad de números:"));
 let numeros = [];
 
@@ -404,3 +410,5 @@ function imprimirPares(nums) {
 }
 
 imprimirPares(numeros);
+
+*/
