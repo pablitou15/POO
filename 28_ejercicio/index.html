@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoLab</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- top navigation -->
+    <div class="top">
+        <div class="nav-container">
+            <h1>VideoLab</h1>
+            <input type="text" placeholder="Search" name="query" class="search">
+            <button class="btn">Login</button>
+        </div>
+    </div>
+
+    <!-- main content -->
+    <div class="flex-container">
+
+        <!-- left column -->
+        <div class="col-l">
+
+            <!-- main video element -->
+            <video id="mainVideo" class="placeholder" height="500px" muted controls>
+                <source src="mira mi Cristiano.mp4" type="video/mp4">
+                Mira mi Cristiano.
+            </video>
+
+            <!-- video info -->
+            <div class="row">
+                <div class="start">
+                    <!-- Aquí agregué el id mainTitle para que sea fácil identificar el título del video principal -->
+                    <h1 id="mainTitle">Example Video Title</h1>
+                    <h3>1.3K Views | June, 18, 2021</h3>
+                    <div class="user">
+                        <img src="assets/user.png" alt="user-circle" class="avatar-s">
+                        <span class="user-name">YO</span>
+                    </div>
+                </div>
+                <button class="btn">Subscribe</button>
+            </div>
+
+        </div>
+
+        <!-- right column -->
+        <div class="col-r">
+
+            <h3 class="sub-header">Otros videos</h3>
+
+            <!-- video small with video-title -->
+            <div class="video-small" onmouseover="playVideo(this)">
+                <video class="vid-s secondaryVideo" muted>
+                    <source src="ES LA D DE DAVO ESA __.mp4" type="video/mp4">
+                </video>
+                <span class="video-title">Es la D de davo</span>
+            </div>
+
+            <div class="video-small" onmouseover="playVideo(this)">
+                <video class="vid-s secondaryVideo" muted>
+                    <source src="A QUIEN FICHO DJMARIIO PLANTILLA.mp4" type="video/mp4">
+                </video>
+                <span class="video-title">Yo jugando fifa</span>
+            </div>
+
+            <div class="video-small" onmouseover="playVideo(this)">
+                <video class="vid-s secondaryVideo" muted>
+                    <source src="¡¡NOO MI CASA TIO!! video original @Vegetta777.mp4" type="video/mp4">
+                </video>
+                <span class="video-title">Mi casa tio</span>
+            </div>
+
+            <div class="video-small" onmouseover="playVideo(this)">
+                <video class="vid-s secondaryVideo" muted>
+                    <source src="Miniatura, miniatura (Meme Vegetta777).mp4" type="video/mp4">
+                </video>
+                <span class="video-title">Miniatura</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

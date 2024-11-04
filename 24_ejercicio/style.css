@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 200px;
+    justify-content: center;
+    margin: 0px auto;
+ }
+
+.outer-margin {
+    margin: 0px auto;
+    width: 400px;
+    background-color: #d35400; /* Margin color */
+    padding: 50px;
+
+}
+
+.border {
+    background-color: #f39c12; /* Border color */
+    padding: 50px;
+}
+
+.padding {
+    background-color: #3498db; /* Padding color */
+    padding: 50px;
+}
+
+.content {
+    background-color: #b0c4de; /* Content color */
+    padding: 20px;
+    text-align: center;
+}

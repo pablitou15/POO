@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Interactiva</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+</head>
+<body>
+    <h1>Galería Interactiva de Imágenes</h1>
+    <div class="image-container">
+        <img src="amor.jpg" alt="Imagen 1" onclick="changeImage(this)">
+        <button onclick="showDescription(this)">Descripción</button>
+        <p class="description">Lo mas hermoso de la vida</p>
+    </div>
+    <div class="image-container">
+        <img src="foto1.jpg" alt="Imagen 2" onclick="Imagen2(this)">
+        <button onclick="showDescription(this)">Descripción</button>
+        <p class="description">whoooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>
+    </div>
+
+    <h2>Lista de Tareas</h2>
+    <ul id="taskList">
+        <li class="task">
+            <span>Tarea 1</span>
+            <button onclick="completeTask(this)">Completar</button>
+        </li>
+        <li class="task">
+            <span>Tarea 2</span>
+            <button onclick="completeTask(this)">Completar</button>
+        </li>
+    </ul>
+
+    <h2>Productos</h2>
+    <div class="product-card">
+        <h2>Producto 1</h2>
+        <p class="price">$100.00</p>
+        <button onclick="applyDiscount(this)">Aplicar descuento</button>
+    </div>
+    <div class="product-card">
+        <h2>Producto 2</h2>
+        <p class="price">$150.00</p>
+        <button onclick="applyDiscount(this)">Aplicar descuento</button>
+    </div>
+    <div class="product-card">
+        <h2>Producto 3</h2>
+        <p class="price">$200.00</p>
+        <button onclick="applyDiscount(this)">Aplicar descuento</button>
+    </div>
+
+   
+</body>
+</html>

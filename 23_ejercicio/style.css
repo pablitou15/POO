@@ -1,0 +1,52 @@
+body{
+    background-color: azure;
+}
+
+.container{
+    width: 950px;
+    background-color: gray;
+    padding: 20px;
+    margin: opx auto;
+}
+
+
+
+
+.nav{
+    background-color: green;
+    width: 950px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.nav-secundario{
+    height: 300px;
+    width: 200px;
+    background-color: blue;
+    display: inline-block; /*permite alinear elementos*/
+    margin-right: 20px;
+}
+
+.main{
+    background-color: red;
+    width: 700px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: top; /* permite alinear elementos en parte superior */
+    padding: 10px;
+}
+
+.yellow{
+    height: 200px;
+    width: 200px;
+    background-color: yellow;
+    display: inline-block;
+    margin: 10px;
+    
+}
+
+.purple{
+    width: 500px;
+    height: 660px;
+    background-color: purple;
+}
