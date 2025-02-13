@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subida de Múltiples Archivos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Subir Archivos</h1>
+        <p>Arrastra y suelta tus archivos aquí o haz clic para seleccionarlos.</p>
+
+        <div id="drop-area" onclick="document.getElementById('file-input').click();">
+            <input id="file-input" type="file" name="files[]" multiple hidden>
+            <div class="drag-text">Arrastra tus archivos aquí o haz clic para seleccionarlos.</div>
+        </div>
+        <p class="file-limit">Límite de peso por archivo: <strong>2 MB</strong></p>
+
+        <ul id="file-list"></ul>
+
+        <button id="upload-all" class="upload-button" disabled>Subir Archivos</button>
+         
+        <a href="sub.html">
+            <button class="upload-button"></button> 
+        </a>
+     
+         </div>
+
+    <script src="script.js"></script>
+ </body>
+</html>
